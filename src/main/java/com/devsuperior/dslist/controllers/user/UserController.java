@@ -32,7 +32,6 @@ public class UserController {
     @PostMapping
     public ResponseEntity<UserDTO> createUser(@RequestBody User user) {
         User createdUser = userService.createUser(user);
-//        return result.stream().map(x -> new UserDTO(x)).toList();
         return ResponseEntity.status(HttpStatus.CREATED).body(new UserDTO(createdUser));
     }
 
